@@ -1,8 +1,5 @@
 module Guess
   attr_reader :guess
-  def initialize
-    @guess = "0000"
-  end
 
   def guess=(input)
     #check if the input only have four elements
@@ -15,8 +12,8 @@ module Guess
     end
   end
 
-  def format_guess(guess)
-    @formatted_guess = guess.chars.map{|number| number.to_i}
+  def format_guess
+    @formatted_guess = @guess.chars.map{|number| number.to_i}
   end
 
 end
