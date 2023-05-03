@@ -1,6 +1,6 @@
 module Guess
   attr_reader :guess
-
+  
   def guess=(input)
     #check if the input only have four elements
     if input.length != 4
