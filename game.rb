@@ -21,10 +21,10 @@ class Game
       @victory = self.victory?
       if @victory then break end
       self.print_hints
+      self.turn_control
       self.reset_guess
     end
-
-    if @victory then puts "Player Won!" else puts "Player Lost!" end
+    if @victory then puts "Player Won! The code is #{@code.join}!" else puts "Player Lost! The code was #{@code.join}!" end
   end
 
   def generate_code
@@ -65,5 +65,14 @@ class Game
 
   def victory?
     @guess_control == [1,1,1,1] ? true : false
+  end
+
+  def print_hints
+    hints = @guess_control.compact.sort.reverse
+    hints.each {|value| value == 1 ? (print "\u26ab") : (print "\u26aa")}
+  end
+
+  def turn_control
+    @turn_counter +=1
   end
 end
