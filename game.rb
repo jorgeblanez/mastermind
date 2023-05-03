@@ -12,7 +12,7 @@ class Game
   def game
     self.generate_code
     while @turn_counter <=8
-      
+      self.request_guess
     end
   end
 
@@ -22,5 +22,10 @@ class Game
     end
   end
 
-  def request
+  def request_guess
+    while guess.nil?
+      puts "(#{@turn_counter}/8) Input the combination of 4 numbers, from 1 to 6"
+      self.guess=gets.chomp
+    end
+  end
 end

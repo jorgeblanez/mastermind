@@ -8,14 +8,16 @@
 #puts "\n You lost! The correct code was 5246\n\n"
 #puts "\n You won! The correct code is 5246\n\n"
 
-#input = "1675"
+input = "17"
 ##p input.chars.map{|number| number.to_i}
 #
 #
-#if !input.match(/[1-6]{4}/)
+
 #  p "0001"
-#elsif input.length !=4
-#  p "0000"
-#else
-#  p input
-#end
+if input.length !=4
+  p "0001"
+elsif !input.match(/[1-6]{4}/)
+  p "0000"
+else
+  p input
+end
