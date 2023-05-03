@@ -18,11 +18,13 @@ class Game
       self.request_guess
       self.format_guess
       self.check_guess
-      
-
-
+      @victory = self.victory?
+      if @victory then break end
+      self.print_hints
       self.reset_guess
     end
+
+    if @victory then puts "Player Won!" else puts "Player Lost!" end
   end
 
   def generate_code
@@ -59,5 +61,9 @@ class Game
   def reset_guess
     @guess = nil
     @guess_control = Array.new(4)
+  end
+
+  def victory?
+    @guess_control == [1,1,1,1] ? true : false
   end
 end
