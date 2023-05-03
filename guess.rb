@@ -1,19 +1,18 @@
 module Guess
-  
+  attr_reader :guess
   def initialize
     @guess = "0000"
   end
 
   def guess=(input)
     #check if the input only have four elements
-    if !input.match(/([1-6])/)
-      p "Invalid Input. A number is not between 1 and 6"
-    elsif !input.match(/([1-6]){4}/)
+    if input.length != 4
       p "Invalid Input. There must be four numbers"
+    elsif !input.match(/[1-6]{4}/)
+      p "Invalid Input. A number is not between 1 and 6"
     else
       @guess = input
     end
-
   end
 
   def format_guess(guess)
