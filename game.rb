@@ -1,6 +1,9 @@
 require_relative "guess.rb"
+require_relative "computer_guess.rb"
 class Game
   include Guess
+  include ComputerGuess
+  
   attr_reader :code, :guess_control
   
   def initialize
@@ -16,7 +19,7 @@ class Game
     while @turn_counter <=8
       self.request_guess
       self.format_guess
-      self.check_guess
+      self.check_guess(@code)
       @victory = self.victory?
       if @victory then break end
       self.print_hints

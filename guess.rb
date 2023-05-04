@@ -23,10 +23,10 @@ module Guess
     end
   end
 
-  def check_guess
+  def check_guess(code)
     #check if a value is in the code array
     @formatted_guess.each_index do |index|
-      @code.each do |number|
+      code.each do |number|
         if @formatted_guess[index] == number  
           @guess_control[index] = 0 
         end
@@ -35,7 +35,7 @@ module Guess
 
     #check if both value and position matches code array
     @formatted_guess.each_index do |index|
-      if @formatted_guess[index] == @code[index] 
+      if @formatted_guess[index] == code[index] 
          @guess_control[index] = 1 
       end
     end
