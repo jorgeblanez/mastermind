@@ -4,7 +4,7 @@ module Guess
   def guess=(input)
     #check if the input only have four elements
     if input.length != 4
-      p "Invalid Input. There must be four numbers!"
+      p "Invalid Input. There must be 4 numbers!"
     elsif !input.match(/[1-6]{4}/)
       p "Invalid Input. A number is not between 1 and 6!"
     else
