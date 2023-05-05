@@ -60,7 +60,7 @@ class Game
         self.reset_guess
         sleep(1)
       end
-      if @victory 
+      if @victory
         puts "\nYou lost! The computer correctly guessed the code #{@code.join}" 
       else 
         puts "\nYou Won! The computer didn't crack the code #{@code.join}!" 
