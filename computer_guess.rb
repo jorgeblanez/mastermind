@@ -17,7 +17,7 @@ module ComputerGuess
     if @possible_codes.length == 1296
       @guess = "1122"
     else
-      @guess = @possible_codes[0]
+      @guess = @possible_codes.sample
     end
   end
 
@@ -33,7 +33,6 @@ module ComputerGuess
       if @guess_control.compact.sort.reverse != @computer_guess_control then @possible_codes.delete(value) end
       @guess_control = Array.new(4)
     end
-    p @possible_codes
   end
 
 end

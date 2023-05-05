@@ -58,11 +58,12 @@ class Game
         self.check_possible_codes
         self.turn_control
         self.reset_guess
+        sleep(1)
       end
       if @victory 
-        puts "You lost! The computer correctly guessed the code #{@code.join}" 
+        puts "\nYou lost! The computer correctly guessed the code #{@code.join}" 
       else 
-        puts "You Won! The computer didn't crack the code #{@code.join}!" 
+        puts "\nYou Won! The computer didn't crack the code #{@code.join}!" 
       end
     end
   end
